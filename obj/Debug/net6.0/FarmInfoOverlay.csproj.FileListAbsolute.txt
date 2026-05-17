@@ -1,0 +1,12 @@
+C:\Users\matia\Downloads\FarmInfoOverlay\obj\Debug\net6.0\FarmInfoOverlay.csproj.AssemblyReference.cache
+C:\Users\matia\Downloads\FarmInfoOverlay\obj\Debug\net6.0\FarmInfoOverlay.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matia\Downloads\FarmInfoOverlay\obj\Debug\net6.0\FarmInfoOverlay.AssemblyInfoInputs.cache
+C:\Users\matia\Downloads\FarmInfoOverlay\obj\Debug\net6.0\FarmInfoOverlay.AssemblyInfo.cs
+C:\Users\matia\Downloads\FarmInfoOverlay\obj\Debug\net6.0\FarmInfoOverlay.csproj.CoreCompileInputs.cache
+C:\Users\matia\Downloads\FarmInfoOverlay\bin\Debug\net6.0\FarmInfoOverlay.deps.json
+C:\Users\matia\Downloads\FarmInfoOverlay\bin\Debug\net6.0\FarmInfoOverlay.dll
+C:\Users\matia\Downloads\FarmInfoOverlay\bin\Debug\net6.0\FarmInfoOverlay.pdb
+C:\Users\matia\Downloads\FarmInfoOverlay\obj\Debug\net6.0\FarmInfoOverlay.dll
+C:\Users\matia\Downloads\FarmInfoOverlay\obj\Debug\net6.0\refint\FarmInfoOverlay.dll
+C:\Users\matia\Downloads\FarmInfoOverlay\obj\Debug\net6.0\FarmInfoOverlay.pdb
+C:\Users\matia\Downloads\FarmInfoOverlay\obj\Debug\net6.0\ref\FarmInfoOverlay.dll

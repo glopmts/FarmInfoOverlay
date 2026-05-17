@@ -1,0 +1,18 @@
+{
+  "Name": "FarmInfoOverlay",
+  "Author": "GlopMts",
+  "Version": "1.0.0",
+  "Description": "Exibe informações úteis sobre itens da fazenda",
+  "UniqueID": "GlopMts.FarmInfoOverlay",
+  "EntryDll": "FarmInfoOverlay.dll",
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": [
+    "Nexus:InfoPlantation"
+  ],
+  "Dependencies": [
+    {
+      "UniqueID": "spacechase0.GenericModConfigMenu",
+      "IsRequired": false
+    }
+  ]
+}
