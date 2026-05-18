@@ -95,6 +95,10 @@ FarmInfoOverlay/
 
 ```bash
 dotnet build
+
+ou
+
+ dotnet build FarmInfoOverlay.csproj
 ```
 
 O mod será compilado em `bin/Debug/` e copiado automaticamente para:

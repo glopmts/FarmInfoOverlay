@@ -15,9 +15,7 @@ namespace FarmInfoOverlay.Rendering
 
     private readonly SiloHandler SiloHandler;
     private readonly ChestHandler ChestHandler;
-    private readonly CropHandler CropHandler;
     private readonly MachineHandler MachineHandler;
-    private readonly AnimalHandler AnimalHandler;
 
     public OverlayRenderer(IMonitor monitor, ModConfig config)
     {
@@ -25,54 +23,64 @@ namespace FarmInfoOverlay.Rendering
       Config = config;
       SiloHandler = new SiloHandler();
       ChestHandler = new ChestHandler();
-      CropHandler = new CropHandler();
-      MachineHandler = new MachineHandler();
-      AnimalHandler = new AnimalHandler();
+      MachineHandler = new MachineHandler(config);
     }
 
-    // Render para o local atual (externo)
-    public void Render(SpriteBatch batch, GameLocation location)
-    {
-      if (!Config.Enabled) return;
-
-      var items = CollectItems(location);
-      foreach (var item in items)
-        DrawTooltip(batch, item, offset: Vector2.Zero);
-    }
-
-    // Render para interior de um building — offset pelo tile do building
+    // Render para o local atual (fazenda externa, vila, etc.)
     public void Render(SpriteBatch batch, GameLocation interior, Building building)
     {
       if (!Config.Enabled) return;
-
-      // Offset em pixels: posição do building na fazenda
-      var buildingPixelOffset = new Vector2(
+      var offset = new Vector2(
           building.tileX.Value * Game1.tileSize,
           building.tileY.Value * Game1.tileSize
       );
-
-      var items = CollectItems(interior);
-      foreach (var item in items)
-        DrawTooltip(batch, item, offset: buildingPixelOffset);
+      foreach (var item in CollectItems(interior, isInterior: true))
+        DrawTooltip(batch, item, offset);
     }
 
-    private List<OverlayItem> CollectItems(GameLocation location)
+
+    // Render para interior de um building — converte coordenadas internas para a tela
+    public void Render(SpriteBatch batch, GameLocation location)
+    {
+      if (!Config.Enabled) return;
+      foreach (var item in CollectItems(location, isInterior: false))
+        DrawTooltip(batch, item, Vector2.Zero);
+    }
+
+
+    private List<OverlayItem> CollectItems(GameLocation location, bool isInterior = false)
     {
       var items = new List<OverlayItem>();
-      if (Config.ShowSiloInfo) items.AddRange(SiloHandler.GetOverlays(location));
-      if (Config.ShowChestInfo) items.AddRange(ChestHandler.GetOverlays(location));
-      if (Config.ShowCropDays) items.AddRange(CropHandler.GetOverlays(location));
-      if (Config.ShowMachineStatus) items.AddRange(MachineHandler.GetOverlays(location));
-      if (Config.ShowAnimalInfo) items.AddRange(AnimalHandler.GetOverlays(location));
+
+      if (Config.ShowSiloInfo)
+        items.AddRange(SiloHandler.GetOverlays(location));
+
+      // Chests e Máquinas só no local onde o jogador está
+      // — não projetar de interiores para o mapa externo
+      if (!isInterior)
+      {
+        if (Config.ShowChestInfo)
+          items.AddRange(ChestHandler.GetOverlays(location));
+
+        if (Config.ShowMachineStatus)
+          items.AddRange(MachineHandler.GetOverlays(location));
+      }
+
       return items;
     }
 
     private void DrawTooltip(SpriteBatch batch, OverlayItem item, Vector2 offset)
     {
+
+      if (string.IsNullOrWhiteSpace(item.Label)) return;
+      if (item.TilePosition.X <= 0 && item.TilePosition.Y <= 0) return;
+
+
+      if (string.IsNullOrWhiteSpace(item.Label)) return;
+
       var worldPos = item.TilePosition * Game1.tileSize + offset;
       var screenPos = Game1.GlobalToLocal(worldPos);
 
-      // Não desenha se estiver fora da tela
       if (screenPos.X < -200 || screenPos.X > Game1.viewport.Width + 200) return;
       if (screenPos.Y < -200 || screenPos.Y > Game1.viewport.Height + 200) return;
 

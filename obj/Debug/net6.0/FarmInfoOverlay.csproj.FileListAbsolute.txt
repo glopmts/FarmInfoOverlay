@@ -10,3 +10,4 @@ C:\Users\matia\Downloads\FarmInfoOverlay\obj\Debug\net6.0\FarmInfoOverlay.dll
 C:\Users\matia\Downloads\FarmInfoOverlay\obj\Debug\net6.0\refint\FarmInfoOverlay.dll
 C:\Users\matia\Downloads\FarmInfoOverlay\obj\Debug\net6.0\FarmInfoOverlay.pdb
 C:\Users\matia\Downloads\FarmInfoOverlay\obj\Debug\net6.0\ref\FarmInfoOverlay.dll
+C:\Users\matia\Downloads\FarmInfoOverlay\obj\Debug\net6.0\FarmInfoOverlay.sourcelink.json

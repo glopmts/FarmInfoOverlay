@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FarmInfoOverlay")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f83eecd580618cb4bba7330aa2b53bc926759c8")]
 [assembly: System.Reflection.AssemblyProductAttribute("FarmInfoOverlay")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FarmInfoOverlay")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,7 +1,7 @@
 {
   "Name": "FarmInfoOverlay",
   "Author": "GlopMts",
-  "Version": "1.0.0",
+  "Version": "1.0.5",
   "Description": "Exibe informações úteis sobre itens da fazenda",
   "UniqueID": "GlopMts.FarmInfoOverlay",
   "EntryDll": "FarmInfoOverlay.dll",

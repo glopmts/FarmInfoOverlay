@@ -1,0 +1,12 @@
+{
+  "Enabled": true,
+  "ToggleKey": "U",
+  "ShowSiloInfo": true,
+  "ShowChestInfo": true,
+  "ShowMachineStatus": true,
+  "OverlayScale": 1.0,
+  "OverlayOpacity": 0.85,
+  "YOffset": -60,
+  "CropDaysThreshold": 3,
+  "MachineHoursThreshold": 2
+}
