@@ -1,35 +1,40 @@
 # FarmInfoOverlay
 
-Um mod para **Stardew Valley** que exibe informações úteis sobre itens da fazenda em tempo real.
+A mod for **Stardew Valley** that displays useful farm item information in real time.
 
-## 📋 Descrição
+## 📋 Description
 
-FarmInfoOverlay é um mod que adiciona uma sobreposição visual na tela mostrando informações detalhadas sobre os objetos da sua fazenda, facilitando o gerenciamento e otimização de plantações, máquinas e animais.
+FarmInfoOverlay adds an on-screen visual overlay showing detailed information about objects on your farm, making it easier to manage and optimize crops, machines, chests, and animals.
 
-## ✨ Funcionalidades
+## ✨ Features
 
-- **Informações de Silos** - Visualize a quantidade de feno armazenado
-- **Informações de Baús** - Veja o conteúdo e espaço disponível
-- **Dias de Colheita** - Acompanhe quantos dias faltam para colher as plantações
-- **Status de Máquinas** - Verifique o progresso de máquinas de processamento
-- **Informações de Animais** - Veja status e detalhes dos seus animais
+- **Silo Information** — View the amount of stored hay
+- **Chest Information** — Check chest contents and available space
+- **Crop Harvest Days** — Track how many days remain until crops are ready
+- **Machine Status** — Monitor processing machine progress
+- **Animal Information** — View status and details of your animals
 
-## 🎮 Como Usar
+## 🎮 How to Use
 
-### Instalação
+### Installation
 
-1. Instale o [SMAPI](https://smapi.io/) (Stardew Modding API)
-2. Extraia os arquivos do mod em `Stardew Valley\Mods\FarmInfoOverlay`
-3. Execute o jogo normalmente
+1. Install [SMAPI](https://smapi.io/?utm_source=chatgpt.com) (Stardew Modding API)
+2. Extract the mod files into:
 
-### Controles
+```txt
+Stardew Valley\Mods\FarmInfoOverlay
+```
 
-- **H** (padrão) - Ativa/desativa o overlay
-  - Você pode alterar a tecla no arquivo de configuração
+3. Launch the game normally
 
-### Configuração
+### Controls
 
-Edite o arquivo `config.json` na pasta do mod para personalizar:
+- **H** (default) — Toggle the overlay on/off
+  - You can change the key in the configuration file
+
+### Configuration
+
+Edit the `config.json` file inside the mod folder to customize settings:
 
 ```json
 {
@@ -46,100 +51,114 @@ Edite o arquivo `config.json` na pasta do mod para personalizar:
 }
 ```
 
-#### Opções Disponíveis:
+#### Available Options
 
-- `Enabled` - Ativa ou desativa o mod
-- `ToggleKey` - Tecla para ativar/desativar o overlay (padrão: U)
-- `ShowSiloInfo` - Exibe informações de silos
-- `ShowChestInfo` - Exibe informações de baús
-- `ShowCropDays` - Exibe dias para colheita
-- `ShowMachineStatus` - Exibe status de máquinas
-- `ShowAnimalInfo` - Exibe informações de animais
-- `OverlayScale` - Escala visual do overlay (0.5 a 2.0)
-- `OverlayOpacity` - Transparência (0.0 a 1.0)
-- `YOffset` - Posição vertical do overlay em relação ao objeto
+- `Enabled` — Enable or disable the mod
+- `ToggleKey` — Key used to toggle the overlay (default: U)
+- `ShowSiloInfo` — Display silo information
+- `ShowChestInfo` — Display chest information
+- `ShowCropDays` — Display remaining crop growth days
+- `ShowMachineStatus` — Display machine processing status
+- `ShowAnimalInfo` — Display animal information
+- `OverlayScale` — Overlay visual scale (0.5 to 2.0)
+- `OverlayOpacity` — Overlay transparency (0.0 to 1.0)
+- `YOffset` — Vertical offset position relative to the object
 
-## 🔧 Requisitos
+## 🔧 Requirements
 
 - **Stardew Valley** 1.6+
-- **SMAPI** (Stardew Modding API)
-- **.NET 6.0** ou superior
+- [SMAPI](https://smapi.io/?utm_source=chatgpt.com) (Stardew Modding API)
+- **.NET 6.0** or later
 
-### Dependências Opcionais:
+### Optional Dependencies
 
-- [Generic Mod Config Menu](https://www.nexusmods.com/stardewvalley/mods/5098) - Para menu de configuração gráfica
+- [Generic Mod Config Menu](https://www.nexusmods.com/stardewvalley/mods/5098?utm_source=chatgpt.com) — Provides a graphical configuration menu
 
-## 🛠️ Desenvolvimento
+## 🛠️ Development
 
-### Estrutura do Projeto
+### Project Structure
 
-```
+```txt
 FarmInfoOverlay/
-├── Handlers/              # Lógica para processar informações de objetos
+├── Handlers/              # Logic for processing object information
 │   ├── AnimalHandler.cs
 │   ├── ChestHandler.cs
 │   ├── CropHandler.cs
 │   ├── MachineHandler.cs
 │   └── SiloHandler.cs
-├── Rendering/            # Sistema de renderização visual
+├── Rendering/             # Visual rendering system
 │   ├── OverlayItem.cs
 │   └── OverlayRenderer.cs
-├── Interfaces/           # Interfaces do projeto
-├── ModEntry.cs           # Ponto de entrada do mod
-├── ModConfig.cs          # Configurações do mod
-├── manifest.json         # Metadados do mod
-└── FarmInfoOverlay.csproj # Arquivo de projeto C#
+├── Interfaces/            # Project interfaces
+├── ModEntry.cs            # Mod entry point
+├── ModConfig.cs           # Mod configuration
+├── manifest.json          # Mod metadata
+└── FarmInfoOverlay.csproj # C# project file
 ```
 
-### Compilação
+### Build
 
 ```bash
 dotnet build
-
-ou
-
- dotnet build FarmInfoOverlay.csproj
 ```
 
-O mod será compilado em `bin/Debug/` e copiado automaticamente para:
+or
 
+```bash
+dotnet build FarmInfoOverlay.csproj
 ```
+
+The mod will be compiled into:
+
+```txt
+bin/Debug/
+```
+
+and automatically copied to:
+
+```txt
 C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Mods\FarmInfoOverlay\
 ```
 
-## 📝 Exemplo de Uso
+## 📝 Example Usage
 
-Ao ativar o mod com a tecla **H**, você verá sobreposições flutuantes acima dos objetos exibindo:
+When enabling the mod using the **H** key, floating overlays will appear above farm objects displaying:
 
-- Quantidade de itens em baús
-- Dias restantes para colheita
-- Status de processamento de máquinas
-- Quantidade de feno nos silos
-- Status de felicidade dos animais
+- Item quantity inside chests
+- Remaining crop growth days
+- Machine processing status
+- Amount of hay stored in silos
+- Animal happiness and status
 
-## 🐛 Reportar Problemas
+## 🐛 Reporting Issues
 
-Se encontrar problemas ou bugs:
+If you encounter problems or bugs:
 
-1. Verifique se o SMAPI está atualizado
-2. Confirme que o arquivo `config.json` está válido
-3. Verifique o arquivo `SMAPI-latest.txt` em `%appdata%\StardewValley\` para detalhes de erro
+1. Make sure SMAPI is up to date
+2. Confirm the `config.json` file is valid
+3. Check the `SMAPI-latest.txt` file located in:
 
-## 📄 Licença
+```txt
+%appdata%\StardewValley\
+```
 
-Este projeto é fornecido como está para uso com Stardew Valley.
+for error details
 
-## 👨‍💻 Autor
+## 📄 License
+
+This project is provided as-is for use with Stardew Valley.
+
+## 👨‍💻 Author
 
 **GlopMts**
 
 ## 🔗 Links
 
-- [Nexus Mods](https://www.nexusmods.com/stardewvalley/mods/InfoPlantation)
-- [SMAPI](https://smapi.io/)
-- [Stardew Valley](https://www.stardewvalley.net/)
+- [Nexus Mods](https://www.nexusmods.com/stardewvalley/mods/InfoPlantation?utm_source=chatgpt.com)
+- [SMAPI](https://smapi.io/?utm_source=chatgpt.com)
+- [Stardew Valley](https://www.stardewvalley.net/?utm_source=chatgpt.com)
 
 ---
 
-**Versão:** 1.0.0  
-**Versão Mínima de API:** 4.0.0
+**Version:** 1.0.5
+**Minimum API Version:** 4.0.0
