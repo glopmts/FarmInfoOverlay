@@ -34,7 +34,7 @@ Edite o arquivo `config.json` na pasta do mod para personalizar:
 ```json
 {
   "Enabled": true,
-  "ToggleKey": "H",
+  "ToggleKey": "U",
   "ShowSiloInfo": true,
   "ShowChestInfo": true,
   "ShowCropDays": true,
@@ -49,7 +49,7 @@ Edite o arquivo `config.json` na pasta do mod para personalizar:
 #### Opções Disponíveis:
 
 - `Enabled` - Ativa ou desativa o mod
-- `ToggleKey` - Tecla para ativar/desativar o overlay (padrão: H)
+- `ToggleKey` - Tecla para ativar/desativar o overlay (padrão: U)
 - `ShowSiloInfo` - Exibe informações de silos
 - `ShowChestInfo` - Exibe informações de baús
 - `ShowCropDays` - Exibe dias para colheita
